@@ -3,7 +3,7 @@ if (!(Get-Command gh -ErrorAction SilentlyContinue)) {
     exit 1
 }
 
-$orgName = Read-Host -Prompt "Enter the GitHub organization/account name"
+$orgName = Read-Host -Prompt "Enter the GitHub organization name"
 
 $repos = gh repo list $orgName --limit 1000 --json name --jq '.[].name'
 
